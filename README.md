@@ -2,7 +2,8 @@
 
 ## Description
 
-This will show us how to install and configure `LAMP` [Apache-2.4](https://httpd.apache.org/download.cgi), database [mysql 5.7](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/) and [php 7.1](http://php.net/manual/en/migration71.php). Also give some instructions that can be used to install the `framework`  [Flight](http://flightphp.com/) and `library` [php-activerecord](http://www.phpactiverecord.org/) we choose. 
+This will show us how to install and configure `LAMP` [Apache-2.4](https://httpd.apache.org/download.cgi), database [mysql 5.7](https://dev.mysql.com/doc/relnotes/mysql/5.7/en/) and [php 7.1](http://php.net/manual/en/migration71.php).  
+Also give some instructions that can be used to install the `framework`  [Flight](http://flightphp.com/) and `library` [php-activerecord](http://www.phpactiverecord.org/) we choose. 
 
 ## Platform  
 - CentOS 7 x64 
@@ -56,10 +57,8 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   install HHVM => n
 ```  
 
----  
-
 ### configuration
-#### modify `http.conf` path  
+#### \#modify `http.conf` path  
 
 ```ruby
   sudo vim /usr/local/apache/conf/httpd.conf
@@ -72,7 +71,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>
 ```  
 
-#### modify `0.conf` path  
+#### \#modify `0.conf` path  
 
 ```ruby
   sudo vim /usr/local/apache/conf/vhost/0.conf
@@ -88,7 +87,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>
 ```  
 
-#### set `wwwroot` access privilege  
+#### \#set `wwwroot` access privilege  
 
 ```ruby
   sudo chown -Rf nctulib /data/wwwroot/default/
@@ -122,7 +121,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
 ```  
 
 ## Other  
-#### modify `MySQL account/password` 
+#### \#modify `MySQL account/password` 
 
 ```ruby
   sudo vim /etc/ld.so.conf.d/mysql.conf
@@ -130,7 +129,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   sudo vim /data/wwwroot/default/phpMyAdmin/config.inc.php
 ```  
 
-#### `URL` can be rewrite  
+#### \#`URL` can be rewrite  
   
 ```ruby  
   sudo vim /usr/local/apache/conf/httpd.conf
@@ -141,7 +140,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>  
 ```  
 
-#### Write `Rewrite Rule`  
+#### \#Write `Rewrite Rule`  
 
 ```ruby  
   sudo vim /data/wwwroot/default/.htaccess
