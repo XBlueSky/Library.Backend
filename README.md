@@ -11,11 +11,12 @@ Installs and configures web server [Apache-2.4](https://httpd.apache.org/downloa
 
 ## Table of Contents    
 
-- [Web server](#Web_server)  
+- [Web_server](#web_server)  
 - [Framework](#framework)  
 - [Library](#library)  
+- [Other](#other)
 
-## Web server  
+## Web_server  
 we use `oneinstack` to be more easily to install Apache, MySQL, PHP.  
 
 ### Screen  installation
@@ -28,8 +29,72 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   tar xzf oneinstack-full.tar.gz                           #unzip
   cd oneinstack  
   screen -S oneinstack  
-  sudo ./install.sh                                        #install
-                     ```
+  sudo ./install.sh                                        #install 
+```  
+
+---  
+
+```ruby
+  upgrade operating system => n
+  SSH port => 22
+  install web server => y
+  select Nginx server => 3                   #(do not install)
+  select Apache server => 1                  #(Apache-2.4)
+  select Tomcat server => 3                  #(do not install)
+  install database => y
+  version of database => 1                   #(mysql 5.7)
+  password of database => oneinstack 
+  select version of php => 5                 #(php 7.1)
+  install opcode cache of php => y 
+  select version of opcode cache of php => 1 #(Zend Opcode)
+  install zendguardloader => n
+  install ionCube => n
+  install ImageMagick => n
+  install Pure-FTPd => y
+  install phpMyadmin => y
+  install redis => y
+  install memcached => y
+  install HHVM => n
+```  
+
+---  
+
+### configuration
+#### modify `http.conf` path  
+
+```ruby
+  sudo vim /usr/local/apache/conf/httpd.conf
+  ------------------------------------------
+  DocumentRoot "/data/wwwroot/default"
+  <Directory "/data/wwwroot/default">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
+```  
+
+#### modify `0.conf` path  
+
+```ruby
+  sudo vim /usr/local/apache/conf/vhost/0.conf
+  --------------------------------------------
+  <Directory "/data/wwwroot/default">
+    SetOutputFilter DEFLATE
+    Options FollowSymLinks ExecCGI
+    Require all granted
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    DirectoryIndex index.html index.php
+  </Directory>
+```  
+
+#### set `wwwroot` access privilege  
+
+```ruby
+  sudo chown -Rf nctulib /data/wwwroot/default/
+```  
+
 
 
 
