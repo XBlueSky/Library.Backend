@@ -38,15 +38,15 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   upgrade operating system => n
   SSH port => 22
   install web server => y
-  select Nginx server => 3                   #(do not install)
-  select Apache server => 1                  #(Apache-2.4)
-  select Tomcat server => 3                  #(do not install)
+  select Nginx server => 3                                 #(do not install)
+  select Apache server => 1                                #(Apache-2.4)
+  select Tomcat server => 3                                #(do not install)
   install database => y
-  version of database => 1                   #(mysql 5.7)
+  version of database => 1                                 #(mysql 5.7)
   password of database => oneinstack 
-  select version of php => 5                 #(php 7.1)
+  select version of php => 5                               #(php 7.1)
   install opcode cache of php => y 
-  select version of opcode cache of php => 1 #(Zend Opcode)
+  select version of opcode cache of php => 1               #(Zend Opcode)
   install zendguardloader => n
   install ionCube => n
   install ImageMagick => n
@@ -95,9 +95,9 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   
 ## Composer   
 ```ruby
-  composer: cd /data/wwwroot/default/api                 #download composer
+  cd /data/wwwroot/default/api                              #download composer
   sudo curl -sS https://getcomposer.org/installer | php
-  cd /data/wwwroot/default/api                           #install
+  cd /data/wwwroot/default/api                              #install
   chmod +x composer.phar
   sudo composer -v
   composer
@@ -116,7 +116,8 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
 ## Library  
 [php-activerecord](http://www.phpactiverecord.org/)  which is an open source ORM library based on the ActiveRecord pattern to be more easily to handle SQL for common operations.  
   
-```ruby  
+```ruby 
+  cd /data/wwwroot/default/api/vendor
   composer require php-activerecord/php-activerecord
 ```  
 
@@ -136,7 +137,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   ------------------------------------------
   add LoadModule alias_module modules/mod_alias.so
   <Directory "/data/wwwroot/default">
-  AllowOverride All
+    AllowOverride All
   </Directory>  
 ```  
 
