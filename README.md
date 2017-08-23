@@ -11,18 +11,25 @@ Installs and configures web server [Apache-2.4](https://httpd.apache.org/downloa
 
 ## Table of Contents    
 
-- [web server](#web server)  
-- [framework](#framework)  
-- [library](#library)  
+- [Web server](#Web_server)  
+- [Framework](#framework)  
+- [Library](#library)  
 
-## Web Server  
+## Web server  
 we use `oneinstack` to be more easily to install Apache, MySQL, PHP.  
 
-### Screen  
+### Screen  installation
 ```ruby
   yum -y install wget screen
 ```
-
+### Oneinstack installation  
+```ruby
+  wget http://mirrors.linuxeye.com/oneinstack-full.tar.gz  #download oneinstack
+  tar xzf oneinstack-full.tar.gz                           #unzip
+  cd oneinstack  
+  screen -S oneinstack  
+  sudo ./install.sh                                        #install
+                     ```
 
 
 
