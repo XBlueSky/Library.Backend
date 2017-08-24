@@ -155,6 +155,27 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </IfModule>
   sudo systemctl restart httpd
 ```  
+  
+#### \#`redis` installation  
+  
+```ruby  
+  cd usr/local                                                      #install redis
+	wget http://download.redis.io/releases/redis-3.0.7.tar.gz
+	tar xzf redis-3.0.7.tar.gz
+	cd redis-3.0.7
+	make
+	make all
+	make install
+  
+  ----------------------------------------------------------
+  
+  cd usr/local/bin                                                  #start redis-server
+	redis-server  
+  
+  ----------------------------------------------------------  
+  
+  composer require predis/predis                                    #install php redis client by composer  
+```
 
 
 
