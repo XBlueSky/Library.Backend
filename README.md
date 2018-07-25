@@ -58,7 +58,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
 ```  
 
 ### configuration
-#### \#modify `http.conf` path  
+#### \# modify `http.conf` path  
 
 ```ruby
   sudo vim /usr/local/apache/conf/httpd.conf
@@ -71,7 +71,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>
 ```  
 
-#### \#modify `0.conf` path  
+#### \# modify `0.conf` path  
 
 ```ruby
   sudo vim /usr/local/apache/conf/vhost/0.conf
@@ -87,7 +87,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>
 ```  
 
-#### \#set `wwwroot` access privilege  
+#### \# set `wwwroot` access privilege  
 
 ```ruby
   sudo chown -Rf nctulib /data/wwwroot/default/
@@ -122,7 +122,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
 ```  
 
 ## Other  
-#### \#modify `MySQL account/password` 
+#### \# modify `MySQL account/password` 
 
 ```ruby
   sudo vim /etc/ld.so.conf.d/mysql.conf
@@ -130,7 +130,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   sudo vim /data/wwwroot/default/phpMyAdmin/config.inc.php
 ```  
 
-#### \#`URL` can be rewrite  
+#### \# `URL` can be rewrite  
   
 ```ruby  
   sudo vim /usr/local/apache/conf/httpd.conf
@@ -141,7 +141,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   </Directory>  
 ```  
 
-#### \#Write `Rewrite Rule`  
+#### \# Write `Rewrite Rule`  
 
 ```ruby  
   sudo vim /data/wwwroot/default/.htaccess
@@ -156,7 +156,7 @@ we use `oneinstack` to be more easily to install Apache, MySQL, PHP.
   sudo systemctl restart httpd
 ```  
   
-#### \#`redis` installation  
+#### \# `redis` installation  
   
 ```ruby  
   cd usr/local                                                      #install redis
